@@ -1,0 +1,5 @@
+[Main]
+punish_votes_quantity = 3
+min_punished_timeout = 30
+punish_chat_timeout = 120
+blocked_words = équal, equal, brinde, caso, famoso caso, ekual, ĒQUILLLLLL
