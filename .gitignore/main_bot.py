@@ -44,7 +44,6 @@ async def cant_vote(punisher, victim):
     for i in punisher:
         try:
             if already_voted[punisher] == victim:
-                print("CANT VOTE!")
                 return True
             else:
                 return False
@@ -113,7 +112,6 @@ async def on_message(message):
                 await client.send_message(message.channel, embed=embed)
 
             if message.content.startswith("!punish"):
-                print("Started with punish")
                 print(str(message.mentions[0]))
                 words = message.content.split(" ")
                 defendant = message.mentions
@@ -121,7 +119,6 @@ async def on_message(message):
 
                 if not await cant_vote(str(author), str(nameid)):
                     if await isListed(str(nameid)) and votes[str(nameid)] < punish_quantity - 1:
-                        print("Is listed and vote lower then 2")
                         votes[str(nameid)] += 1
                     elif not await isListed(str(nameid)):
                         votes[str(nameid)] = 1
